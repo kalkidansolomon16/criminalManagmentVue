@@ -13,7 +13,7 @@
         </div>
         <div>
             <h1 class="mt-2 font-bold text-xl lg:text-2xl lg:mt-1">ኮምቦልቻ ማረሚያ ቤት</h1>
-            <p class="text-sm mt-10 -ml-16 text-gray-600 lg:mt-16 lg:text-lg">አገልግሎታቺንን ለማግኘት ይመዝገቡ</p>
+            <p class="text-sm mt-10 -ml-16 text-gray-600 lg:mt-16 lg:text-lg">አገልግሎቶቻቺንን ለማግኘት ይመዝገቡ</p>
         </div>
     </div>
     <div class="lg:flex lg:w-full lg:justify-between">
@@ -25,7 +25,7 @@
             <p>ጾታ</p>
             <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="ጾታ" v-model="model.users.sex">
         </div> -->
-        <div>
+        <div class="mt-5 lg:mt-10">
           <label class="">ጾታ:</label><br />
           <select
             name="sex"
@@ -64,6 +64,7 @@
           <p>ስልክ ቁጥር </p>
           <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="phone number" v-model="model.users.phone_number">
       </div>
+      
       <!-- <div class="mt-5">
           <p>ድርሻ </p>
           <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="role">
@@ -78,7 +79,12 @@
             <option v-for="role in roles" :key="role.id" :value="role.id">{{ role.name }}</option>
           </select>
         </div>
+       
   </div>
+  <div class="mt-5">
+          <p>ፎቶ</p>
+          <input type="file"  @change="handlephoto" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="phone number" >
+      </div>
         <div>
             <button class="bg-[#e4a404] text-white px-7 rounded-sm py-2 ml-1 mt-6" @click="registerUser">ይመዝገቡ</button>
         </div>
@@ -105,7 +111,8 @@ data(){
                 user_name:'',
                 address:'',
                 phone_number:'',
-                role_id:null
+                role_id:null,
+                photo:''
             }
         }
     }
@@ -133,6 +140,13 @@ methods:{
             console.log('users',this.sexes)
         })
     },
+    handlephoto(event) {
+      const file = event.target.files[0]
+      if (file) {
+        this.model.users.photo = event.target.files[0]
+        console.log('photo',this.model.users.photo)
+      }
+    },
     registerUser(){
         const formData = new FormData();
         formData.append('full_name',this.model.users.full_name) 
@@ -143,6 +157,7 @@ methods:{
         formData.append('address',this.model.users.address) 
         formData.append('phone_number',this.model.users.phone_number) 
         formData.append('role_id',this.model.users.role_id) 
+        formData.append('photo', this.model.users.photo)
         axios.post('http://127.0.0.1:8000/api/user',formData,{
             headers:{
                 'Content-Type':'multipart/form-data'
