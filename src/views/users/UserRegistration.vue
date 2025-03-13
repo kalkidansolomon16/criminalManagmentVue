@@ -38,29 +38,29 @@
     </div>
     <div class="lg:flex lg:w-full lg:justify-between">
 
-        <div class="mt-5">
+        <div class="mt-10">
             <p>እድሜ</p>
             <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="እድሜ" v-model="model.users.age">
         </div>
-        <div class="mt-5">
+        <div class="mt-10">
             <p>ልዩ ስም</p>
             <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="ልዩ ስም" v-model="model.users.user_name">
         </div>
     </div>
   <div class="lg:flex lg:w-full lg:justify-between">
 
-      <div class="mt-5">
+      <div class="mt-10">
           <p>የይለፍ ቃል</p>
           <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="የይለፍ ቃል" v-model="model.users.password">
       </div>
-      <div class="mt-5">
+      <div class="mt-10">
           <p>አድራሻ</p>
           <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="አድራሻ" v-model="model.users.address">
       </div>
   </div>
   <div class="lg:flex lg:w-full lg:justify-between">
 
-      <div class="mt-5">
+      <div class="mt-10">
           <p>ስልክ ቁጥር </p>
           <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="phone number" v-model="model.users.phone_number">
       </div>
@@ -69,7 +69,7 @@
           <p>ድርሻ </p>
           <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="role">
       </div> -->
-      <div>
+      <div class="mt-10">
           <label class="">ድርሻ:</label><br />
           <select
             name="role"
@@ -81,10 +81,11 @@
         </div>
        
   </div>
-  <div class="mt-5">
+  <div class="mt-10">
           <p>ፎቶ</p>
           <input type="file"  @change="handlephoto" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="phone number" >
       </div>
+      
         <div>
             <button class="bg-[#e4a404] text-white px-7 rounded-sm py-2 ml-1 mt-6" @click="registerUser">ይመዝገቡ</button>
         </div>

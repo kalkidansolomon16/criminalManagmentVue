@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import UserRegistration from '../views/users/UserRegistration.vue'
+import MedicalHistory from '../views/medical/MedicalHistory.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,7 +11,12 @@ const router = createRouter({
       name: 'UserRegistration',
       component: UserRegistration,
     },
-
+    {
+      path: '/medical',
+      name: 'MedicalHistory',
+      component: MedicalHistory,
+    },
+    
     
   ],
 })
