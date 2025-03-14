@@ -1,7 +1,7 @@
 <template>
 
   
-  <RouterView class="bg-[#e4a404]"/>
+  <RouterView />
 
 </template>
 

@@ -12,29 +12,38 @@
            
        </div>
        <div>
-               <h1 class="mt-2 font-bold text-xl lg:text-2xl lg:mt-1">ገንዘዎን ይመዝግቡ</h1>
+               <h1 class="mt-2 font-bold text-xl lg:text-2xl lg:mt-1 text-center">የታራሚዉን ንብረት ይመዝግቡ </h1>
            </div>
            
+           <div class="lg:flex lg:w-full lg:justify-between mt-8">
+     
+               <div>
+                 <label for="">የታራሚው ስም </label>
+                 <select name="" id="" v-model="model.criminalCash.criminal_id" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100">
+                     <option value="" disabled>የታራሚዉ ስም </option>
+                     <option v-for="criminal in criminals" :key="criminal.id" :value="criminal.id">{{ criminal.first_name }}</option>
+                 </select>
+               </div>
+          <div class="">
+              <p>ብዛት </p>
+              <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="ብዛት" v-model="model.criminalCash.amount">
+          </div>
+        
+        </div>
        <div class="lg:flex lg:w-full lg:justify-between">
        
            <div class="mt-7">
                <p>የገባበት ቀን</p>
-               <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="የገባበት ቀን" v-model="model.criminalCash.deposite_date">
+               <input type="date" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="የገባበት ቀን" v-model="model.criminalCash.deposite_date">
            </div>
-           <div class="mt-5">
+           <div class="mt-7">
           <p>የወጣበት ቀን</p>
-          <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="የወጣበት ቀን" v-model="model.criminalCash.withdrawal_date">
+          <input type="date" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="የወጣበት ቀን" v-model="model.criminalCash.withdrawal_date">
       </div>
        </div>
-       <div>
-      <div class="mt-5">
-          <p>ብዛት </p>
-          <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="ብዛት" v-model="model.criminalCash.amount">
-      </div>
-    </div>
   <div>
         <div>
-            <button class="bg-[#e4a404] text-white px-7 rounded-sm py-3 mt-6 mr-" @click="registerUser">Register</button>
+            <button class="bg-[#e4a404] text-white px-10 rounded-sm py-3 mt-6 mr-" @click="registerUser">Register</button>
         </div>
     </div>
 </div>
@@ -49,21 +58,33 @@ data(){
     return{
         model:{
             criminalCash:{
-                criminal_id:1,
+                criminal_id:null,
                 deposite_date:'',
                 withdrawal_date:'',
                 amount:'',
-                user_id:1
+                user_id:null
             }
-        }
+        },
+        criminals:[]
     }
 },
+mounted(){
+this.fetchCriminals();
+this.model.criminalCash.user_id = localStorage.getItem('user_id');
+},
 methods:{
+    fetchCriminals(){
+axios.get('http://127.0.0.1:8000/api/criminal').then((res)=>{
+    this.criminals = res.data.Criminal
+    console.log('criminal',this.criminals);
+})
+    },
     registerCriminalCash(){
+        this.model.criminalCash.user_id = localStorage.getItem('user_id');
         const formData = new FormData();
         formData.append('criminal_id',this.model.criminalCash.criminal_id) 
-        formData.append('deposite_date',this.model.criminalCash.tydeposite_datepe) 
-        formData.append('withdraw_date',this.model.criminalCash.withdraw_date) 
+        formData.append('deposite_date',this.model.criminalCash.deposite_date) 
+        formData.append('withdrawal_date',this.model.criminalCash.withdrawal_date) 
         formData.append('amount',this.model.criminalCash.amount) 
         formData.append('user_id',this.model.criminalCash.user_id) 
         axios.post('http://127.0.0.1:8000/api/criminalCash',formData,{

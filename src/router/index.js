@@ -51,10 +51,11 @@ const router = createRouter({
       component: criminalProperty,
     },
     {
-      path: '/criminalCash',
+      path: '/CriminalCash',
       name: 'CriminalCash',
       component: CriminalCash,
-
+    },
+    {
       path: '/user',
       name: 'UserRegistration',
       component: UserRegistration,
