@@ -1,5 +1,5 @@
 <template>
-  <div class="m-1 border-2 border-gray-200 rounded-md px-2 pb-10 relative lg:h-280 h-350 lg:px-4 lg:mx-2">
+  <div class="font-serif m-1 border-2 border-gray-200 rounded-md px-2 pb-10 relative lg:h-280 h-350 lg:px-4 lg:mx-2">
     <div>
       <div class="bg-[#e4a404] w-full h-46 ">
    <h1 class="text-white text-center pt-4  font-bold text-xl lg:text-3xl">ወደአካዉንቶ ይግቡ </h1>

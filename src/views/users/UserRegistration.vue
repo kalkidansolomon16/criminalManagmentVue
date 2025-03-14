@@ -1,5 +1,5 @@
 <template>
- <div class="m-1 border-2 border-gray-200 rounded-md px-2 pb-10 relative h-280 lg:px-4 lg:mx-2">
+ <div class="font-serif m-1 border-2 border-gray-200 rounded-md px-2 pb-10 relative h-280 lg:px-4 lg:mx-2">
 
     <div class="">
         <div class="bg-[#e4a404] w-full h-46 ">
@@ -137,7 +137,7 @@ methods:{
 },
     getSex(){
         axios.get('http://127.0.0.1:8000/api/sex').then((res)=>{
-            this.sexes = res.data
+            this.sexes = res.data.data
             console.log('users',this.sexes)
         })
     },

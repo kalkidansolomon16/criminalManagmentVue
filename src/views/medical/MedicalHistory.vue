@@ -1,5 +1,5 @@
 <template>
-    <div class="m-1 border-2 border-gray-200 rounded-md px-2 pb-10 relative lg:h-280 h-350 lg:px-4 lg:mx-2">
+    <div class="font-serif m-1 border-2 border-gray-200 rounded-md px-2 pb-10 relative lg:h-280 h-350 lg:px-4 lg:mx-2">
    
        <div class="">
            <div class="bg-[#e4a404] w-full h-46 ">
@@ -42,6 +42,7 @@
                   v-model="model.medical.disease_type_id"
                    class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="deases"
                 >
+                <option :value="null" disabled>Select Deases Type</option>
                   <option v-for="disease in diseases" :key="disease.id" :value="disease.id">{{ disease.name }}</option>
                 </select>
             </div>
