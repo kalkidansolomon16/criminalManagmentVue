@@ -1,5 +1,8 @@
 <template>
-  <router-view/>
+
+  
+  <RouterView class="bg-[#e4a404]"/>
+
 </template>
 
 <script>
@@ -11,3 +14,4 @@ export default {
 <style>
 
 </style>
+
