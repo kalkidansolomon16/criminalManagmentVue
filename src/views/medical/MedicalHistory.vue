@@ -3,7 +3,7 @@
    
        <div class="">
            <div class="bg-[#e4a404] w-full h-46 ">
-   <h1 class="text-white text-center pt-4  font-bold text-xl lg:text-3xl">Medical History</h1>
+   <h1 class="text-black text-center pt-4  font-bold text-xl lg:text-3xl">ኮምቦልቻ ማረሚያ ቤት</h1>
    </div>
    <div class="absolute top-28 left-7 bg-white rounded-md w-5/6 px-1 shadow-sm pb-10 lg:top-32 lg:left-40 lg:px-20 lg:w-3/4">
    
@@ -12,7 +12,7 @@
                <img src="/criminallogo.png" alt="" class="w-24 h-24 -mt-10 lg:w-10/10 lg:h-52 lg:-mt-20">
            </div>
            <div>
-               <h1 class="mt-2 font-bold text-xl lg:text-2xl lg:mt-1">ኮምቦልቻ ማረሚያ ቤት</h1>
+               <h1 class="mt-2 font-bold text-xl lg:text-2xl lg:mt-1">Medical History</h1>
                <p class="text-sm mt-10 -ml-16 text-gray-600 lg:mt-16 lg:text-lg">Criminal Health Record</p>
            </div>
        </div>

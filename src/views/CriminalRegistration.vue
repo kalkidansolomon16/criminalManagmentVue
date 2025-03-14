@@ -1,6 +1,6 @@
 <template>
-  <div class="ml-">
-    <div class="bg-gradient-to-r from-[#e4a404] to-[#fbd3318e] h-40 px-10">
+  <div class="">
+    <div class="bg-[#e4a404] w-full h-46 ">
       <div>
         <img src="/logo.png" alt="" class="w-20 rounded-full mx-auto lg:w-72 lg:-mt-6">
         <p class="text-center  font-bold text-xl lg:-mt-12  lg:pb-6">የታራሚወች መመዝገቢያ ቅጽ</p>
