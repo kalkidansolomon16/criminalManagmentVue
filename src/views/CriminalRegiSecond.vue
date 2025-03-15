@@ -9,19 +9,19 @@
           <div class="lg:flex">
             <div class="ml-4 pt-4 lg:mr-20 ">
               <p class="mb-1 text-gray-600 font-serif">ቁመት</p>
-              <input type="text" v-model="height"
+              <input type="text" v-model="info.height"
                 class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4">
             </div>
   
             <div class="ml-4 lg:mr-20 lg:pt-4">
               <p class="mb-1 text-gray-600 font-serif"> የአይኑ ቀለም </p>
-              <input type="text" v-model=" eye_color"
+              <input type="text" v-model="info.Eye_color"
                 class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4">
             </div>
   
             <div class="ml-4 lg:pt-4">
               <p class="mb-1 text-gray-600 font-serif">መልክ</p>
-              <input type="text" v-model="face"
+              <input type="text" v-model="info.face"
                 class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4">
             </div>
           </div>
@@ -29,40 +29,40 @@
           <div class="lg:flex">
             <div class="ml-4 lg:mr-20 ">
               <p class="mb-1 text-gray-600 font-serif">ግንባር</p>
-              <input type="text" v-model="forehead"
+              <input type="text" v-model="info.Forehead"
                 class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4">
             </div>
   
             <div class="ml-4 lg:mr-20 ">
               <p class="mb-1 text-gray-600 font-serif">አፍንጫ</p>
-              <input type="text" v-model="nose"
+              <input type="text" v-model="info.nose"
                 class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4">
             </div>
   
             <div class="ml-4">
               <label class="font-serif text-gray-600 text-md">የጸጉር አይነት </label><br>
-              <select name="gender" v-model="hair_id"
+              <select name="gender" v-model="info.hair_type_id"
                 class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4">
-                <option v-for="hairs in hair" :key="hair.id" :value="hair.id">{{ hair.name }}</option>
+                <option v-for="hair in hairs" :key="hair.id" :value="hair.id">{{ hair.name }}</option>
               </select>
             </div>
           </div>
           <div class="lg:flex">
             <div class="ml-4 lg:mr-20 ">
               <p class="mb-1 text-gray-600 font-serif">ጥርስ</p>
-              <input type="text" v-model="teeth"
+              <input type="text" v-model="info.teeth"
                 class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4">
             </div>
   
             <div class="ml-4 lg:mr-20 ">
               <p class="mb-1 text-gray-600 font-serif">ከንፈር</p>
-              <input type="text" v-model="lip"
+              <input type="text" v-model="info.lip"
                 class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4">
             </div>
   
             <div class="ml-4 lg:mr-20 ">
               <p class="mb-1 text-gray-600 font-serif">ጆሮ</p>
-              <input type="text" v-model="ear"
+              <input type="text" v-model="info.ear"
                 class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4">
             </div>
   
@@ -70,26 +70,72 @@
           <div class="lg:flex">
             <div class="ml-4 lg:mr-20 ">
               <p class="mb-1 text-gray-600 font-serif">ልዩ ምልክት</p>
-              <input type="text" v-model="unique_appearance"
+              <input type="text" v-model="info.Unique_appearance"
                 class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4">
             </div>
             <div class="ml-4 lg:mr-20 ">
               <p class="mb-1 text-gray-600 font-serif">ዜግነት</p>
-              <input type="text" v-model="citizinship"
+              <input type="text" v-model="info.citizenship"
                 class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4">
             </div>
 
           </div>
         
-          <Button class="w-72 mx-auto ml-8 mt-6 py-3 bg-[#d6a119] rounded-md mb-20  lg:w-96 ld:mx-auto lg:ml-96 text-white lg:text-lg font-serif">መዝግብ</Button>
+          <Button @click="submitForm" class="w-72 mx-auto ml-8 mt-6 py-3 bg-[#d6a119] rounded-md mb-20  lg:w-96 ld:mx-auto lg:ml-96 text-white lg:text-lg font-serif">መዝግብ</Button>
         </div>
       </div>
     </div>
   </template>
-  
   <script>
-  export default {
+  import axios from "axios";
   
+  export default {
+    data() {
+      return {
+        info: {
+          criminal_id: localStorage.getItem('criminal_id'),
+          height: 1.7,
+          Eye_color: 'ሰማያዊ',
+          face: 'ክብ',
+          Forehead: 'ትንሽ',
+          nose: 'ጎራዳ',
+          hair_type_id: null,
+          teeth: 'ነጭ',
+          lip: 'ትንሽ',
+          ear: 'ትልቅ',
+          Unique_appearance: 'አስቂኝአስቂኝ',
+          citizenship: 'ኢትዮጵያዊ'
+        },
+        hairs: [],
+      };
+    },
+    mounted() {
+      this.fetchHair();
+    },
+    methods: {
+      async fetchHair() {
+        try {
+          const response = await axios.get('http://127.0.0.1:8000/api/hair');
+          this.hairs = response.data.data; 
+          console.log('hair', this.hairs);
+        } catch (error) {
+          console.error('Error fetching hair:', error);
+        }
+      },
+      async submitForm() {
+        const formData = new FormData();
+        Object.entries(this.info).forEach(([key, value]) => {
+          formData.append(key, value);
+        });
+  
+        try {
+          const response = await axios.post('http://127.0.0.1:8000/api/criminalInfo', formData, {});
+          console.log('Data submitted successfully:', response.data);
+        } catch (error) {
+          console.error('Error submitting data:', error);
+        }
+      }
+    }
   }
   </script>
   

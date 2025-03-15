@@ -30,7 +30,7 @@ const router = createRouter({
       component: CriminalRegistration,
     },
     {
-      path: '/CriminalRegiSecond',
+      path: '/criminalinfo',
       name: 'CriminalRegiSecond',
       component: CriminalRegiSecond,
     },
