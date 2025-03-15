@@ -2,7 +2,7 @@
   <div class="font-serif m-1 border-2 border-gray-200 rounded-md px-2 pb-10 relative lg:h-280 h-350 lg:px-4 lg:mx-2">
     <div>
       <div class="bg-[#e4a404] w-full h-46 ">
-   <h1 class="text-white text-center pt-4  font-bold text-xl lg:text-3xl">ወደአካዉንቶ ይግቡ </h1>
+   <h1 class="text-white text-center pt-4  font-bold text-xl lg:text-3xl">ወደ አካዉንቶ ይግቡ </h1>
    </div>
    <div class="justify-center flex">
            <div>
@@ -21,7 +21,7 @@
           
            <div class="mt-10">
                <p>የይለፍ ቃሎን ያስገቡ </p>
-               <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="የይለፍ ቃል" v-model="password">
+               <input type="password" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="የይለፍ ቃል" v-model="password">
            </div>
            <div>
                <button class="bg-[#e4a404] text-white px-7 rounded-sm py-2 ml-1 mt-6"  @click="handleLogin">ይቀጥሉ</button>

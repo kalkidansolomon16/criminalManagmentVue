@@ -25,7 +25,7 @@
                  </select>
                </div>
           <div class="">
-              <p>ብዛት </p>
+              <p>የብር መጠን </p>
               <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="ብዛት" v-model="model.criminalCash.amount">
           </div>
         
@@ -34,7 +34,7 @@
        
            <div class="mt-7">
                <p>የገባበት ቀን</p>
-               <input type="date" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="የገባበት ቀን" v-model="model.criminalCash.deposite_date">
+               <input type="date" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="የገባበት ቀን" v-model="model.criminalCash.deposit_date">
            </div>
            <div class="mt-7">
           <p>የወጣበት ቀን</p>
@@ -43,7 +43,7 @@
        </div>
   <div>
         <div>
-            <button class="bg-[#e4a404] text-white px-10 rounded-sm py-3 mt-6 mr-" @click="registerUser">Register</button>
+            <button class="bg-[#e4a404] text-white px-10 rounded-sm py-3 mt-6 mr-" @click="registerCriminalCash">Register</button>
         </div>
     </div>
 </div>
@@ -59,7 +59,7 @@ data(){
         model:{
             criminalCash:{
                 criminal_id:null,
-                deposite_date:'',
+                deposit_date:'',
                 withdrawal_date:'',
                 amount:'',
                 user_id:null
@@ -69,8 +69,15 @@ data(){
     }
 },
 mounted(){
-this.fetchCriminals();
-this.model.criminalCash.user_id = localStorage.getItem('user_id');
+const token = localStorage.getItem('token');
+if(token){
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+    this.fetchCriminals();
+    this.model.criminalCash.user_id = localStorage.getItem('user_id');
+}
+else{
+    this.$router.push({name:'Login'});
+}
 },
 methods:{
     fetchCriminals(){
@@ -83,7 +90,7 @@ axios.get('http://127.0.0.1:8000/api/criminal').then((res)=>{
         this.model.criminalCash.user_id = localStorage.getItem('user_id');
         const formData = new FormData();
         formData.append('criminal_id',this.model.criminalCash.criminal_id) 
-        formData.append('deposite_date',this.model.criminalCash.deposite_date) 
+        formData.append('deposit_date',this.model.criminalCash.deposit_date) 
         formData.append('withdrawal_date',this.model.criminalCash.withdrawal_date) 
         formData.append('amount',this.model.criminalCash.amount) 
         formData.append('user_id',this.model.criminalCash.user_id) 
