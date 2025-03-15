@@ -64,10 +64,17 @@ data(){
     }
 },
 mounted(){
-this.fetchProperty();
-this.fetchCriminals();
-this.user_id = localStorage.getItem('user_id')
-console.log('user_id',this.user_id)
+    const token = localStorage.getItem('token');
+    if(token){
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+        this.fetchProperty();
+        this.fetchCriminals();
+        this.user_id = localStorage.getItem('user_id')
+        console.log('user_id',this.user_id)
+    }
+    else{
+        this.$router.push({name:'Login'});
+    }
 },
 methods:{
     fetchProperty(){
