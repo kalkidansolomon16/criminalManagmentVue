@@ -357,7 +357,7 @@ export default {
         criminal_unique_number: '213265',
         prison_unique_number: '6598623',
         criminalSell_unique_number: '02',
-        first_name: 'aster',
+        first_name: 'belete',
         middle_name: 'kebede',
         last_name: 'alemu',
         date_of_birth: '02/10/1990',
@@ -382,7 +382,7 @@ export default {
         Closest_respondent_district:'kombolcha',
         phone_number: '0331112565',
         mobile_number: '0921212121',
-        user_id: 1,
+        user_id : localStorage.getItem('user_id'),
         registral_signature: null, 
         photo: null,               
         crime_id: '1',
@@ -427,6 +427,7 @@ export default {
     this.fetchEthnic();
     this.fetchEducations();
     this.fetchSex();
+    this.criminals.user_id = localStorage.getItem('user_id');
   },
   methods: {
     handlesegnature(event) {
@@ -551,7 +552,8 @@ export default {
     }
   })
   .then(response => {
-    console.log('Data submitted successfully:', response.data);
+    localStorage.setItem('criminal_id',response.data.data.id);
+    this.$router.push('/criminalinfo');
   })
   .catch(error => {
     console.error('Error submitting data:', error);
