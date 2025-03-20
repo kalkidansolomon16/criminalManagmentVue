@@ -18,7 +18,7 @@
     <p class=" "> {{ polices.role?.name || 'N/A' }}</p>
      <div class="w-12/11 mx-auto">
 
-        <button @click="redirectTOCriminals" class="bg-[#0d5364] text-white px-10 rounded-sm py-3 mt-6 cursor-pointer text-xs lg:text-lg">ወደ እስረኞች መረጃ ይግቡ </button>
+        <button @click="redirectTOCriminals" class="bg-[#0d5364] text-white px-10 rounded-sm py-3 lg:mt-6 mt-3 cursor-pointer text-xs lg:text-lg">ወደ እስረኞች መረጃ ይግቡ </button>
     </div>
 </div>
 <div class="w-1/3 mr-1 mx-auto lg:w-1/2 ">
@@ -28,7 +28,7 @@
 <h1 class="text-center text-white mb-5 mt-5 text-xl lg:text-4xl">የግል መረጃ ዝርዝር </h1>
 <div class="nameContainer rounded-md shadow-2xl flex p-5 mt-10 w-6/7  mx-auto lg:w-2/3 ">
 <div class="w-1/2 ml-5">
-    <img :src="`http://127.0.0.1:8000/${polices.photo}`" alt="no image" class="  rounded-md -ml-5 mt-13 lg:h-100 lg:mt-2 lg:w-5/6">
+    <img :src="`http://127.0.0.1:8000/${polices.photo}`" alt="no image" class="  rounded-md -ml-5 mt-17 lg:h-100 lg:mt-2 lg:w-5/6">
 </div>
 <div class=" pt-3 rounded-sm   text-black lg:text-xl lg:mt-13">
     <p class=" "> <span class="font-bold text-black">ሙሉ ስም</span> ፡ {{ polices.full_name }}</p>
@@ -40,7 +40,7 @@
     <p class=" mt-3 "> <span class="font-bold text-black">ድርሻ </span> ፡ {{ polices.role?.name || 'N/A' }}</p>
 </div>
 </div>
-<div class="w-6/11 mx-auto">
+<div class="lg:w-6/11 lg:mx-auto w-2/3 mx-auto">
 
 <button @click="redirectTOCriminals" class="bg-[#0d5364]  lg:text-lg text-white px-10 rounded-sm py-3 mt-6 cursor-pointer text-sm">ወደ እስረኞች መረጃ ይግቡ </button>
 </div>
