@@ -64,13 +64,26 @@ methods:{
             })
             const token  = response.data.token;
             const user_id = response.data.user_id
+            const role = response.data.role
             localStorage.setItem('token',token)
             localStorage.setItem('user_id',user_id)
+            localStorage.setItem('role',role)
+            console.log('role')
            
             
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
             this.getUser();
+<<<<<<< Updated upstream
             this.$router.push('/DoctorDashboard')
+=======
+            if(role === 'police'){
+                this.$router.push('/police')
+            }
+            else{
+
+                this.$router.push('/')
+            }
+>>>>>>> Stashed changes
  
         }catch(err){
             console.log(err)
