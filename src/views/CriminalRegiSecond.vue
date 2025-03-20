@@ -105,7 +105,7 @@
           teeth: 'ነጭ',
           lip: 'ትንሽ',
           ear: 'ትልቅ',
-          Unique_appearance: 'አስቂኝአስቂኝ',
+          Unique_appearance: 'አስቂኝ',
           citizenship: 'ኢትዮጵያዊ'
         },
         hairs: [],

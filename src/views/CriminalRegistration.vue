@@ -440,9 +440,13 @@ export default {
         Closest_respondent_district:'kombolcha',
         phone_number: '0331112565',
         mobile_number: '0921212121',
+<<<<<<< Updated upstream
 
         user_id : localStorage.getItem('user_id'),
 
+=======
+        user_id: localStorage.getItem('user_id'),
+>>>>>>> Stashed changes
         registral_signature: null, 
         photo: null,               
         crime_id: '1',
@@ -478,6 +482,7 @@ export default {
     }
   },
   mounted(){
+<<<<<<< Updated upstream
 
     this.fetchCriminalType();
     this.fetchCrime();
@@ -490,6 +495,24 @@ export default {
     this.fetchSex();
     this.criminals.user_id = localStorage.getItem('user_id');
 
+=======
+    const token = localStorage.getItem('token')
+    if(token){
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      this.fetchCriminalType();
+      this.fetchCrime();
+      this.fetchCity();
+      this.fetchTowns();
+      this.fetchRegion();
+      this.fetchReligion();
+      this.fetchEthnic();
+      this.fetchEducations();
+      this.fetchSex();
+    }
+    else{
+      this.$router.push({name:'Login'});
+    }
+>>>>>>> Stashed changes
   },
   methods: {
     handlesegnature(event) {

@@ -12,8 +12,13 @@ import CriminalCash from '@/views/CriminalCash.vue'
 import UserRegistration from '../views/users/UserRegistration.vue'
 import Login from '../views/users/Login.vue'
 import MedicalHistory from '../views/medical/MedicalHistory.vue'
+<<<<<<< Updated upstream
 import DoctorDashboard from '../views/medical/DoctorDashboard.vue'
 import DoctorProfile from '../views/medical/DoctorProfile.vue'
+=======
+import PoliceHomePage from '../views/police/PoliceHomePage.vue'
+import CriminalList from '../views/criminals/CriminalList.vue'
+>>>>>>> Stashed changes
 
 
 
@@ -84,7 +89,20 @@ const router = createRouter({
 
 
     },
-    
+    {
+      path: '/police',
+      name: 'PoliceHomePage',
+      component: PoliceHomePage,
+
+
+    },
+    {
+      path: '/criminallist',
+      name: 'CriminalList',
+      component: CriminalList,
+
+
+    },
     
   ],
 })
