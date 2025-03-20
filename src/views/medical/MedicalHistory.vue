@@ -2,7 +2,7 @@
     <div class="font-serif m-1 border-2 border-gray-200 rounded-md px-2 pb-10 relative lg:h-280 h-350 lg:px-4 lg:mx-2">
    
        <div class="">
-           <div class="bg-[#e4a404] w-full h-46 ">
+           <div class="bg-gradient-to-r from-[#44abc4] via-[#1e88ab] via-[#0d7992] via-[#146584] to-[#0d5364] h-40 px-10">
    <h1 class="text-black text-center pt-4  font-bold text-xl lg:text-3xl">ኮምቦልቻ ማረሚያ ቤት</h1>
    </div>
    <div class="absolute top-28 left-7 bg-white rounded-md w-5/6 px-1 shadow-sm pb-10 lg:top-32 lg:left-40 lg:px-20 lg:w-3/4">
@@ -70,31 +70,7 @@
      </div>
      <div class="lg:flex lg:w-full lg:justify-between">
    
-         
-         <!-- <div class="mt-5">
-             <p>ድርሻ </p>
-             <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="role">
-         </div> -->
-         <!-- <div>
-             <label class="">ድርሻ:</label><br />
-             <select
-               name="role"
-               v-model="model.users.role_id"
-                class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="ድርሻድርሻ"
-             >
-               <option v-for="role in roles" :key="role.id" :value="role.id">{{ role.name }}</option>
-             </select>
-           </div> -->
-           
-         <!-- <div class="mt-5">
-             <p>Medical Expense</p>
-             <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="phone number" v-model="model.users.phone_number">
-         </div> -->
-          
-         <!-- <div class="mt-5">
-                 <p>Guards</p>
-                 <input type="file"  @change="handlephoto" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="guards" >
-             </div> -->
+ 
              <div class="lg:flex lg:w-full lg:justify-between">
                 <div class="mt-10">
 
@@ -133,7 +109,7 @@
           </div>
      </div>
            <div>
-               <button class="bg-[#e4a404] text-white px-7 rounded-sm py-2 ml-1 mt-6" @click="recordMedicalHistory">Submit</button>
+               <button class="bg-[#0d5364] hover:scale-105 text-white px-7 rounded-sm py-2 ml-1 mt-6" @click="recordMedicalHistory">Submit</button>
            </div>
    </div>
            
