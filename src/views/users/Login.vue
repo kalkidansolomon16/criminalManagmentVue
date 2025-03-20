@@ -1,7 +1,9 @@
 <template>
+
   <div class="">
     <div >
       <div class="bg-gradient-to-r from-[#44abc4] via-[#1e88ab] via-[#0d7992] via-[#146584] to-[#0d5364]  w-full h-46 ">
+
 
    </div>
    <div class="justify-center flex bg-[#fbfbfb] rounded-xl -mt-4 lg:-mt-16 w-88  lg:w-11/12 lg:mx-auto lg: ml-6 lg:pl-16">
@@ -22,8 +24,10 @@
            </div>
           
            <div class="mt-10">
+
                <p class="text-[#0d5364]">የይለፍ ቃሎን ያስገቡ </p>
                <input type="password" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border placeholder-[#7badba] border-gray-200 focus:outline-none lg:w-100" placeholder="የይለፍ ቃል" v-model="password">
+
            </div>
            <div>
                <button class="bg-[#0d5364] text-white px-7 cursor-pointer hover:scale-105 rounded-sm py-2 ml-1 mt-6"  @click="handleLogin">ይቀጥሉ</button>

@@ -51,7 +51,7 @@
 
       <div class="mt-10">
           <p>የይለፍ ቃል</p>
-          <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="የይለፍ ቃል" v-model="model.users.password">
+          <input type="password" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="የይለፍ ቃል" v-model="model.users.password">
       </div>
       <div class="mt-10">
           <p>አድራሻ</p>

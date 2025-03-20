@@ -10,38 +10,50 @@
           <div class="ml-4 pt-4 lg:mr-20 ">
             <p class="mb-1 text-gray-600 font-serif">የወ/መ/ፍ/ቁጥር</p>
             <input type="text" v-model="criminals.criminal_unique_number"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
 
           <div class="ml-4 lg:mr-20 lg:pt-4">
             <p class="mb-1 text-gray-600 font-serif"> የማረ/ቤት መ/መ/ቁጥር</p>
             <input type="text" v-model="criminals.prison_unique_number"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
 
           <div class="ml-4 lg:pt-4">
             <p class="mb-1 text-gray-600 font-serif">ታራሚው የሚገኝበት የቤት ቁጥር</p>
             <input type="text" v-model="criminals.criminalSell_unique_number"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
         </div>
         <div class="lg:flex">
           <div class="ml-4 pt-4 lg:mr-20 ">
             <p class="mb-1 text-gray-600 font-serif">ስም</p>
             <input type="text" v-model="criminals.first_name"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
 
           <div class="ml-4 lg:mr-20 lg:pt-4">
             <p class="mb-1 text-gray-600 font-serif"> የአባት ስም</p>
             <input type="text" v-model="criminals.middle_name"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
 
           <div class="ml-4 lg:pt-4">
             <p class="mb-1 text-gray-600 font-serif">የአያት ስም</p>
             <input type="text" v-model="criminals.last_name"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
         </div>
 
@@ -49,13 +61,17 @@
           <div class="ml-4 lg:mr-20 ">
             <p class="mb-1 text-gray-600 font-serif">የተወለደበት ቀን</p>
             <input type="date" v-model="criminals.date_of_birth"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
 
           <div class="ml-4 lg:mr-20 ">
             <p class="mb-1 text-gray-600 font-serif">የእናት ስም</p>
             <input type="text" v-model="criminals.mother_name"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
 
           <div class="ml-4">
@@ -96,7 +112,9 @@
           <div class="ml-4 lg:mr-20 ">
             <p class="mb-1 text-gray-600 font-serif">የተወለደበት ቀበሌ</p>
             <input type="text" v-model="criminals.birth_district"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
 
           <div class="ml-4 lg:mr-20">
@@ -127,7 +145,9 @@
           <div class="ml-4 lg:mr-20">
             <p class="mb-1 text-gray-600 font-serif">አሁን የሚኖርበት ቀበሌ</p>
             <input v-model="criminals.current_district" type="text"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
           <div class="ml-4 lg:mr-20 ">
             <label class="font-serif text-gray-600 text-md">የትምህርት ደረጃ</label><br>
@@ -145,7 +165,7 @@
             <input type="text" v-model="criminals.job" class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
           </div>
 
-          <div class="ml-4 lg:mr-20 ">
+         <div class="ml-4 lg:mr-20 ">
             <label class="font-serif text-gray-600 text-md">ብሄር</label><br>
             <select name="" v-model="criminals.ethnic_group_id"
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
@@ -164,7 +184,9 @@
           <div class="ml-4 lg:mr-20 ">
             <p class="mb-1 text-gray-600 font-serif">የቅርብ ተጠሪ</p>
             <input type="text" v-model="criminals.Closest_respondent"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
 
           <div class="ml-4 lg:mr-20">
@@ -195,13 +217,15 @@
           <div class="ml-4 lg:mr-20">
             <p class="mb-1 text-gray-600 font-serif">የቅርብ ተጠሪ ቀበሌ</p>
             <input v-model="criminals.Closest_respondent_district" type="text"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
           <div class="ml-4 lg:mr-20 ">
             <p class="mb-1 text-gray-600 font-serif">ስልክ መደበኛ</p>
             <input v-model="criminals.phone_number" type="number" class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
           </div>
-        </div>
+      </div>
         <div class="lg:flex">
 
           <div class="ml-4 lg:mr-20 ">
@@ -209,16 +233,18 @@
             <input v-model="criminals.mobile_number" type="number" class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
           </div>
 
-          <div class="ml-4 lg:mr-20 ">
+         <!-- <div class="ml-4 lg:mr-20 ">
             <p class="mb-1 text-gray-600 font-serif">ቅጹን የሞላው ባለሙያ ስም</p>
+
             <input type="text" v-model="criminals.user_id" class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
           </div>
 
-          <div class="ml-4 lg:mr-20 ">
+
+        <div class="ml-4 lg:mr-20 ">
             <p class="mb-1 text-gray-600 font-serif">ቅጹን የሞላው ባለሙያ ፊርማ</p>
             <input type="file" @change="handlesegnature" class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
           </div>
-        </div>
+     </div>
         <div class="lg:flex">
           <div class="ml-4 lg:mr-20">
             <label class="font-serif text-gray-600 text-md">የወንጀሉ አይነት</label><br>
@@ -230,7 +256,9 @@
           <div class="ml-4 lg:mr-20 ">
             <p class="mb-1 text-gray-600 font-serif">የወንጀሉ አይነት ገለጻ</p>
             <input v-model="criminals.crime_description" type="textArea"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
 
 
@@ -247,92 +275,120 @@
           <div class="ml-4 lg:mr-20 ">
             <p class="mb-1 text-gray-600 font-serif">ያሰረዉ ፍርድ ቤት ስም</p>
             <input v-model="criminals.arrest_court_id" type="text"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
           <div class="ml-4  lg:mr-20">
             <p class="mb-1 text-gray-600 font-serif">ማረሚያ ቤት የገባበት ቀን</p>
             <input v-model="criminals.date_enterd" type="date"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
           <div class="ml-4  ">
             <p class="mb-1 text-gray-600 font-serif">ማረሚያ ቤት የገባበት ሰአት</p>
             <input v-model="criminals.time_enterd" type="text"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
         </div>
         <div class="lg:flex">
           <div class="ml-4 lg:mr-20 ">
             <p class="mb-1 text-gray-600 font-serif">ዉሳኔ የተሰጠበት ቀን</p>
             <input v-model="criminals.verdict_date" type="date"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
 
           <div class="ml-4 lg:mr-20">
             <p class="mb-1 text-gray-600 font-serif">የፍርድ ልክ ቀጠሮ</p>
             <input v-model="criminals.appointment_date" type="date"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
           <div class="ml-4 lg:mr-20 ">
             <p class="mb-1 text-gray-600 font-serif">ፍርደኛ</p>
             <input v-model="criminals.prisoner" type="text"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
         </div>
         <div class="lg:flex">
           <div class="ml-4 lg:mr-20 ">
             <p class="mb-1 text-gray-600 font-serif">የተሻሻለዉ የፍርድ ልክ</p>
             <input v-model="criminals.updated_verdict" type="text"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
 
           <div class="ml-4 lg:mr-20">
             <p class="mb-1 text-gray-600 font-serif">ዉሳኔ የሰጠው ፍርድ ቤት</p>
             <input v-model="criminals.verdict_court_id" type="text"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
 
           <div class="ml-4">
             <p class="mb-1 text-gray-600 font-serif">በይግባኝ የተሻሻለው የፍርድ ቤት ስም</p>
             <input v-model="criminals.updated_verdict_court_id" type="text"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div> 
         </div>
         <div class="lg:flex">
           <div class="ml-4 lg:mr-20 ">
             <p class="mb-1 text-gray-600 font-serif">የእስራት ቅጣቱ የታሰበበት ቀን</p>
             <input v-model="criminals.start_dateof_arrest" type="date"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
 
           <div class="ml-4 lg:mr-20 ">
             <p class="mb-1 text-gray-600 font-serif">የእስራት ቅጣቱ የሚያልቅበት ቀን</p>
             <input v-model="criminals.end_dateof_arrest" type="date"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
 
           <div class="ml-4">
             <p class="mb-1 text-gray-600 font-serif">በአመክሮ የሚፈታበት ቀን</p>
             <input v-model="criminals.dateof_mercy_release" type="date"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
         </div>
         <div class="lg:flex">
           <div class="ml-4 lg:mr-20 ">
             <p class="mb-1 text-gray-600 font-serif">የተፈታበት ምክንያት</p>
             <input v-model="criminals.release_reason" type="text"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
           <div class="ml-4 lg:mr-20">
             <p class="mb-1 text-gray-600 font-serif">እስራቱን ፈጽሞ የሚፈታበት ቀን</p>
             <input v-model="criminals.date_of_release" type="date"
+
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
+
           </div>
 
           <div class="ml-4 lg:mr-20 ">
             <p class="mb-1 text-gray-600 font-serif">ተያያዥ መረጃ</p>
             <input type="file" @change="handlefile" class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
           </div>
-        </div>
+         </div>
 
 
         <div class="ml-4 w-80 mx-auto lg:w-full lg:mx-auto lg:ml-4">
@@ -340,8 +396,10 @@
           <input type="file" @change="handlephoto" class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
         </div>
 
+
        
         <Button @click="submitData" class="w-72 mx-auto ml-8 mt-6 py-3 hover:scale-105 bg-[#0d5364] rounded-md mb-20  lg:w-96 ld:mx-auto lg:ml-96 text-white lg:text-lg font-serif">ቀጣይ ገጽ</Button>
+
       </div>
     </div>
   </div>
@@ -382,7 +440,9 @@ export default {
         Closest_respondent_district:'kombolcha',
         phone_number: '0331112565',
         mobile_number: '0921212121',
+
         user_id : localStorage.getItem('user_id'),
+
         registral_signature: null, 
         photo: null,               
         crime_id: '1',
@@ -418,6 +478,7 @@ export default {
     }
   },
   mounted(){
+
     this.fetchCriminalType();
     this.fetchCrime();
     this.fetchCity();
@@ -428,6 +489,7 @@ export default {
     this.fetchEducations();
     this.fetchSex();
     this.criminals.user_id = localStorage.getItem('user_id');
+
   },
   methods: {
     handlesegnature(event) {
