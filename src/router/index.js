@@ -17,6 +17,7 @@ import DoctorDashboard from '../views/medical/DoctorDashboard.vue'
 import DoctorProfile from '../views/medical/DoctorProfile.vue'
 import PoliceHomePage from '../views/police/PoliceHomePage.vue'
 import CriminalList from '../views/criminals/CriminalList.vue'
+import Guard from '../views/guard/Guard.vue'
 
 
 
@@ -36,6 +37,11 @@ const router = createRouter({
       path: '/criminalreg',
       name: 'CriminalRegistration',
       component: CriminalRegistration,
+    },
+    {
+      path: '/Guard',
+      name: 'Guard',
+      component: Guard,
     },
     {
       path: '/criminalinfo',

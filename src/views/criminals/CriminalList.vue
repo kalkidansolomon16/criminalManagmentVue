@@ -1,7 +1,7 @@
 <template>
     <div class="">
 <table class=" text-white ">
-    <tr class="w-1/2 border-2 p-2">
+    <th class="w-1/2 border-2 p-2">
         <td class="border-2 p-2">criminal_unique_number</td>
         <td class="border-2 p-2">prison_unique_number</td>
         <td class="border-2 p-2">criminalSell_unique_number</td>
@@ -52,7 +52,7 @@
         <td class="border-2 p-2">photo</td>
         <td class="border-2 p-2">writ</td>
         
-    </tr>
+    </th>
     <tr v-for="criminal in criminals" :key="criminal.id">
         <td class="border-2 p-2">{{ criminal.criminal_unique_number }}</td>
         <td class="border-2 p-2">{{ criminal.prison_unique_number }}</td>
