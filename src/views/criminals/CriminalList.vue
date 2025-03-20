@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div style="width: 7735px; " class="h-screen font-serif bg-gradient-to-r from-[#44abc4] via-[#1e88ab] via-[#0d7992] via-[#146584] to-[#0d5364] px-10 pb-40 w-screen">
 <table class=" text-white ">
     <th class="w-1/2 border-2 p-2">
         <td class="border-2 p-2">criminal_unique_number</td>
@@ -63,22 +63,22 @@
         <td class="border-2 p-2">{{ criminal.date_of_birth }}</td>
         <td class="border-2 p-2">{{ criminal.mother_name }}</td>
         <td class="border-2 p-2">{{ criminal.sex.gender }}</td>
-        <td class="border-2 p-2">{{ criminal.region.name }}</td>
-        <td class="border-2 p-2">{{ criminal.birth_town_id }}</td>
-        <td class="border-2 p-2">{{ criminal.birth_city_id }}</td>
+        <td class="border-2 p-2">{{ criminal.birth_region.name }}</td>
+        <td class="border-2 p-2">{{ criminal.birth_town.name }}</td>
+        <td class="border-2 p-2">{{ criminal.birth_city.name }}</td>
         <td class="border-2 p-2">{{ criminal.birth_district }}</td>
-        <td class="border-2 p-2">{{ criminal.region.name }}</td>
-        <td class="border-2 p-2">{{ criminal.current_town_id }}</td>
-        <td class="border-2 p-2">{{ criminal.current_city_id }}</td>
+        <td class="border-2 p-2">{{ criminal.current_region.name }}</td>
+        <td class="border-2 p-2">{{ criminal.current_town.name }}</td>
+        <td class="border-2 p-2">{{ criminal.current_city.name }}</td>
         <td class="border-2 p-2">{{ criminal.current_district }}</td>
         <td class="border-2 p-2">{{ criminal.educational_level.name }}</td>
         <td class="border-2 p-2">{{ criminal.job }}</td>
         <td class="border-2 p-2">{{ criminal.ethnic_group.name }}</td>
         <td class="border-2 p-2">{{ criminal.religion.name }}</td>
         <td class="border-2 p-2">{{ criminal.Closest_respondent }}</td>
-        <td class="border-2 p-2">{{ criminal.region.name }}</td>
-        <td class="border-2 p-2">{{ criminal.Closest_respondent_town_id }}</td>
-        <td class="border-2 p-2">{{ criminal.Closest_respondent_city_id }}</td>
+        <td class="border-2 p-2">{{ criminal.closest_respondent_region.name }}</td>
+        <td class="border-2 p-2">{{ criminal.closest_respondent_town.name }}</td>
+        <td class="border-2 p-2">{{ criminal.closest_respondent_city.name }}</td>
         <td class="border-2 p-2">{{ criminal.Closest_respondent_district }}</td>
         <td class="border-2 p-2">{{ criminal.phone_number }}</td>
         <td class="border-2 p-2">{{ criminal.mobile_number }}</td>
@@ -101,7 +101,8 @@
         <td class="border-2 p-2">{{ criminal.date_of_release }}</td>
         <td class="border-2 p-2">{{ criminal.release_reason }}</td>
         <td class="border-2 p-2">{{ criminal.dateof_mercy_release }}</td>
-        <td class="border-2 p-2">{{ criminal.photo }}</td>
+
+        <td class="border-2 p-2"><img :src="`http://127.0.0.1:8000/${criminal.photo}`" alt="no image" class="h-40 w-3/4 lg:h-70 rounded-md"></td>
         <td class="border-2 p-2">{{ criminal.writ }}</td>
        
        
