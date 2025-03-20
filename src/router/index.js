@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-// import HomeView from '../views/HomeView.vue'
+import ColorTest from '../views/ColorTest.vue'
 import CriminalRegistration from '../views/CriminalRegistration.vue'
 import CriminalRegiSecond from '../views/CriminalRegiSecond.vue'
 
@@ -12,18 +12,20 @@ import CriminalCash from '@/views/CriminalCash.vue'
 import UserRegistration from '../views/users/UserRegistration.vue'
 import Login from '../views/users/Login.vue'
 import MedicalHistory from '../views/medical/MedicalHistory.vue'
+import DoctorDashboard from '../views/medical/DoctorDashboard.vue'
+import DoctorProfile from '../views/medical/DoctorProfile.vue'
 
 
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    // {
+    {
 
-    //   path: '/home',
-    //   name: 'home',
-    //   component: HomeView,
-    // },
+      path: '/ColorTest',
+      name: 'ColorTest',
+      component: ColorTest,
+    },
     {
       path: '/criminalreg',
       name: 'CriminalRegistration',
@@ -51,6 +53,11 @@ const router = createRouter({
       component: criminalProperty,
     },
     {
+      path: '/DoctorDashboard',
+      name: 'DoctorDashboard',
+      component: DoctorDashboard,
+    },
+    {
       path: '/CriminalCash',
       name: 'CriminalCash',
       component: CriminalCash,
@@ -64,6 +71,11 @@ const router = createRouter({
       path: '/medical',
       name: 'MedicalHistory',
       component: MedicalHistory,
+    },
+    {
+      path: '/DoctorProfile',
+      name: 'DoctorProfile',
+      component: DoctorProfile,
     },
     {
       path: '/login',

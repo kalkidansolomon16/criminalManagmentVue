@@ -1,36 +1,36 @@
 <template>
-  <div class="font-serif m-1 border-2 border-gray-200 rounded-md px-2 pb-10 relative lg:h-280 h-350 lg:px-4 lg:mx-2">
-    <div>
-      <div class="bg-[#e4a404] w-full h-46 ">
-   <h1 class="text-white text-center pt-4  font-bold text-xl lg:text-3xl">ወደአካዉንቶ ይግቡ </h1>
+  <div class="">
+    <div >
+      <div class="bg-gradient-to-r from-[#44abc4] via-[#1e88ab] via-[#0d7992] via-[#146584] to-[#0d5364]  w-full h-46 ">
+
    </div>
-   <div class="justify-center flex">
+   <div class="justify-center flex bg-[#fbfbfb] rounded-xl -mt-4 lg:-mt-16 w-88  lg:w-11/12 lg:mx-auto lg: ml-6 lg:pl-16">
            <div>
                <img src="/criminallogo.png" alt="" class="w-24 h-24 -mt-10 lg:w-10/10 lg:h-52 lg:-mt-20">
            </div>
            <div>
-               <h1 class="mt-2 font-bold text-xl lg:text-2xl lg:mt-1">ኮምቦልቻ ማረሚያ ቤት</h1>
+               <h1 class="mt-2 font-bold text-xl lg:text-2xl lg:mt-1 text-[#0d5364]">ኮምቦልቻ ማረሚያ ቤት</h1>
              
            </div>
+           
        </div>
-       <div class="lg:w-1/3 lg:mx-auto">
+       <h1 class="text-[#0d5364] text-center pt-4  font-bold text-xl lg:text-3xl mb-4 -mt-6">ወደ አካዉንትዎ ይግቡ </h1>
+       <div class="lg:w-1/3 lg:mx-auto border-2 border-[#0d5364] lg:p-10 ml-4 mr-4 p-2 rounded-lg ">
            <div class="mt-10">
-               <p>ልዩ ስም ያስገቡ </p>
-               <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="ልዩ ስምስም" v-model="user_name">
+               <p class="text-[#0d5364]">ልዩ ስም ያስገቡ </p>
+               <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 placeholder-[#7badba]  focus:outline-none lg:w-100" placeholder="ልዩ ስምስም" v-model="user_name">
            </div>
           
            <div class="mt-10">
-               <p>የይለፍ ቃሎን ያስገቡ </p>
-               <input type="text" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border border-gray-200 focus:outline-none lg:w-100" placeholder="የይለፍ ቃል" v-model="password">
+               <p class="text-[#0d5364]">የይለፍ ቃሎን ያስገቡ </p>
+               <input type="password" name="" id="" class="bg-gray-100 rounded-sm mt-2 w-12/13 h-10 pl-3 border placeholder-[#7badba] border-gray-200 focus:outline-none lg:w-100" placeholder="የይለፍ ቃል" v-model="password">
            </div>
            <div>
-               <button class="bg-[#e4a404] text-white px-7 rounded-sm py-2 ml-1 mt-6"  @click="handleLogin">ይቀጥሉ</button>
+               <button class="bg-[#0d5364] text-white px-7 cursor-pointer hover:scale-105 rounded-sm py-2 ml-1 mt-6"  @click="handleLogin">ይቀጥሉ</button>
            </div>
        </div>
     </div>
-    <!-- <input type="text" name="" id="" placeholder="Enter user name" v-model="user_name"><br>
-    <input type="password" placeholder="Enter password" v-model="password">
-    <button @click="handleLogin">Submit</button> -->
+
   </div>
 </template>
 
@@ -66,7 +66,7 @@ methods:{
             
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
             this.getUser();
-            this.$router.push('/')
+            this.$router.push('/DoctorDashboard')
  
         }catch(err){
             console.log(err)
