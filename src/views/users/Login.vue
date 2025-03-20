@@ -73,9 +73,11 @@ methods:{
             
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
             this.getUser();
-            this.$router.push('/DoctorDashboard')
             if(role === 'police'){
                 this.$router.push('/police')
+            }
+            else if(role == 'doctor'){
+                this.$router.push('/DoctorDashboard')
             }
             else{
 
@@ -95,6 +97,14 @@ methods:{
         console.log('Error fetching user', err)
       }
     },
+    async getDoctor(){
+        try{
+            const response = await axios.get('http://127.0.0.1:8000/api/showDoctor')
+            this.doctors = response.data
+        }catch(error){
+            console.error('error fetching doctor crediantials')
+        }
+    }
 }
 }
 </script>

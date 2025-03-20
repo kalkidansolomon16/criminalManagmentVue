@@ -272,13 +272,16 @@
   
         </div>
         <div class="lg:flex">
+         
           <div class="ml-4 lg:mr-20 ">
-            <p class="mb-1 text-gray-600 font-serif">ያሰረዉ ፍርድ ቤት ስም</p>
-            <input v-model="criminals.arrest_court_id" type="text"
-
+            <label class="font-serif text-gray-600 text-md">ያሰረዉ ፍርድ ቤት ስም</label><br>
+            <select name="" v-model="criminals.arrest_court_id"
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
-
+              <option v-for="arrestCourt in arrestCourts" :key="arrestCourt.id" :value="arrestCourt.id">{{ arrestCourt.name }}</option>
+            </select>
           </div>
+         
+
           <div class="ml-4  lg:mr-20">
             <p class="mb-1 text-gray-600 font-serif">ማረሚያ ቤት የገባበት ቀን</p>
             <input v-model="criminals.date_enterd" type="date"
@@ -327,21 +330,22 @@
 
           </div>
 
-          <div class="ml-4 lg:mr-20">
-            <p class="mb-1 text-gray-600 font-serif">ዉሳኔ የሰጠው ፍርድ ቤት</p>
-            <input v-model="criminals.verdict_court_id" type="text"
-
+          <div class="ml-4 lg:mr-20 ">
+            <label class="font-serif text-gray-600 text-md">ዉሳኔ የሰጠው ፍርድ ቤት</label><br>
+            <select name="" v-model="criminals.verdict_court_id"
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
-
+              <option v-for="arrestCourt in arrestCourts" :key="arrestCourt.id" :value="arrestCourt.id">{{ arrestCourt.name }}</option>
+            </select>
           </div>
 
-          <div class="ml-4">
-            <p class="mb-1 text-gray-600 font-serif">በይግባኝ የተሻሻለው የፍርድ ቤት ስም</p>
-            <input v-model="criminals.updated_verdict_court_id" type="text"
-
+          
+          <div class="ml-4 lg:mr-20 ">
+            <label class="font-serif text-gray-600 text-md">በይግባኝ የተሻሻለው የፍርድ ቤት ስም</label><br>
+            <select name="" v-model="criminals.updated_verdict_court_id"
               class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
-
-          </div> 
+              <option v-for="arrestCourt in arrestCourts" :key="arrestCourt.id" :value="arrestCourt.id">{{ arrestCourt.name }}</option>
+            </select>
+          </div>
         </div>
         <div class="lg:flex">
           <div class="ml-4 lg:mr-20 ">
@@ -475,7 +479,8 @@ export default {
       religions:[],
       ethnics:[],
       educations:[],
-      sexs:[]
+      sexs:[],
+      arrestCourts:[],
     }
   },
   mounted(){
@@ -503,6 +508,8 @@ export default {
       this.fetchEthnic();
       this.fetchEducations();
       this.fetchSex();
+      this.fetchArrestedCourt();
+      
     }
     else{
       this.$router.push({name:'Login'});
@@ -541,6 +548,16 @@ export default {
         console.log('gender', this.sexs)
       } catch(error){
         console.error('error fetching the data')
+      }
+    },
+    async fetchArrestedCourt(){
+      try{
+
+        const response =await axios('http://127.0.0.1:8000/api/court')
+        this.arrestCourts =response.data.data;
+        console.log('arrested court',response)
+      }catch(error){
+        console.error('error fetching arrested court')
       }
     },
     async fetchEducations(){
