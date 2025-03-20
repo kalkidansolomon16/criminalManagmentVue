@@ -2,7 +2,7 @@
 
   <div class="">
     <div >
-      <div class="bg-gradient-to-r from-[#44abc4] via-[#1e88ab] via-[#0d7992] via-[#146584] to-[#0d5364]  w-full h-46 ">
+      <div class=" bg-gradient-to-r from-[#44abc4] via-[#1e88ab] via-[#0d7992] via-[#146584] to-[#0d5364]   h-46 ">
 
 
    </div>
@@ -73,9 +73,7 @@ methods:{
             
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
             this.getUser();
-<<<<<<< Updated upstream
             this.$router.push('/DoctorDashboard')
-=======
             if(role === 'police'){
                 this.$router.push('/police')
             }
@@ -83,7 +81,6 @@ methods:{
 
                 this.$router.push('/')
             }
->>>>>>> Stashed changes
  
         }catch(err){
             console.log(err)

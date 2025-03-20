@@ -233,7 +233,7 @@
             <input v-model="criminals.mobile_number" type="number" class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
           </div>
 
-         <!-- <div class="ml-4 lg:mr-20 ">
+         <div class="ml-4 lg:mr-20 ">
             <p class="mb-1 text-gray-600 font-serif">ቅጹን የሞላው ባለሙያ ስም</p>
 
             <input type="text" v-model="criminals.user_id" class="w-80 py-2 bg-gray-200 border-1 border-gray-300 rounded-md mb-4 outline-[#44abc4]">
@@ -440,13 +440,10 @@ export default {
         Closest_respondent_district:'kombolcha',
         phone_number: '0331112565',
         mobile_number: '0921212121',
-<<<<<<< Updated upstream
 
         user_id : localStorage.getItem('user_id'),
 
-=======
         user_id: localStorage.getItem('user_id'),
->>>>>>> Stashed changes
         registral_signature: null, 
         photo: null,               
         crime_id: '1',
@@ -482,7 +479,6 @@ export default {
     }
   },
   mounted(){
-<<<<<<< Updated upstream
 
     this.fetchCriminalType();
     this.fetchCrime();
@@ -495,7 +491,6 @@ export default {
     this.fetchSex();
     this.criminals.user_id = localStorage.getItem('user_id');
 
-=======
     const token = localStorage.getItem('token')
     if(token){
       axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
@@ -512,7 +507,6 @@ export default {
     else{
       this.$router.push({name:'Login'});
     }
->>>>>>> Stashed changes
   },
   methods: {
     handlesegnature(event) {
